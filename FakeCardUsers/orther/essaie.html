@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alibora TalentTrack - Rejoignez-nous en stage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .gradient-animate {
+            background: linear-gradient(-45deg, #1e40af, #3b82f6, #06b6d4, #0ea5e9);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .icon-container {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover .icon-container {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .geometric-bg {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-particle 20s infinite;
+        }
+
+        @keyframes float-particle {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100px, -1000px);
+                opacity: 0;
+            }
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 40%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 60%
+            );
+            transform: rotate(45deg) translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .shine-effect:hover::after {
+            transform: rotate(45deg) translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+    <!-- Hero Section with Animated Gradient -->
+    <section class="relative gradient-animate text-white py-32 parallax-section">
+        <!-- Animated particles -->
+        <div class="particle" style="width: 4px; height: 4px; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; left: 20%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 40%; animation-delay: 6s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 50%; animation-delay: 8s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; left: 60%; animation-delay: 10s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 70%; animation-delay: 12s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; left: 80%; animation-delay: 14s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; left: 90%; animation-delay: 16s;"></div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="glass-effect max-w-4xl mx-auto p-12 rounded-3xl animate-fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Rejoignez <span class="text-cyan-300">ALIBORA</span> en stage
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed">
+                    Postulez en quelques minutes. <span class="font-semibold text-cyan-300">Aucun compte requis.</span>
+                </p>
+                <a href="/candidater" class="btn-primary inline-flex items-center gap-3 bg-white text-blue-600 font-bold py-5 px-10 rounded-full shadow-2xl hover:shadow-cyan-300/50 transition duration-500 transform hover:scale-110 shine-effect">
+                    <span class="text-2xl">📤</span>
+                    <span class="relative z-10">Soumettre ma candidature</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Wave SVG -->
+        <div class="absolute bottom-0 left-0 right-0 w-full">
+            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,58.7C960,64,1056,64,1152,58.7C1248,53,1344,43,1392,37.3L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="#f9fafb"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features Section with Enhanced Cards -->
+    <section class="py-24 bg-gray-50 geometric-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    Une plateforme <span class="text-gradient">innovante</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Simplifiez votre processus de candidature avec notre système moderne
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="card-hover bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100">
+                    <div class="icon-container bg-gradient-to-br from-blue-500 to-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i data-feather="user" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Pour les candidats</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Remplissez un formulaire simple, téléversez votre CV et votre lettre de motivation, et suivez le statut de votre candidature en temps réel.
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card-hover bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100">
+                    <div class="icon-container bg-gradient-to-br from-purple-500 to-pink-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i data-feather="users" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Pour les RH</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Plateforme interne de gestion des stages : candidatures, affectations, suivi, évaluation et archivage automatisé.
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card-hover bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl border border-gray-100">
+                    <div class="icon-container bg-gradient-to-br from-green-500 to-emerald-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
+                        <i data-feather="lock" class="text-white w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-center text-gray-800">Sécurité & confidentialité</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        Vos documents sont stockés de façon sécurisée et ne sont accessibles qu'à l'équipe RH d'ALIBORA.
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="animate-fade-in-up">
+                    <div class="text-5xl font-bold mb-2">500+</div>
+                    <div class="text-xl opacity-90">Candidatures traitées</div>
+                </div>
+                <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="text-5xl font-bold mb-2">95%</div>
+                    <div class="text-xl opacity-90">Taux de satisfaction</div>
+                </div>
+                <div class="animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="text-5xl font-bold mb-2">24h</div>
+                    <div class="text-xl opacity-90">Délai de réponse moyen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-blue-50 geometric-bg">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <div class="animate-float mb-8">
+                    <div class="inline-block text-7xl">🚀</div>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800 leading-tight">
+                    Prêt à rejoindre l'aventure <span class="text-gradient">ALIBORA</span> ?
+                </h2>
+                <p class="text-xl md:text-2xl mb-10 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    Postulez dès maintenant pour votre stage de rêve et faites partie d'une équipe innovante.
+                </p>
+                <a href="/candidater" class="btn-primary inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold py-6 px-12 rounded-full shadow-2xl hover:shadow-blue-500/50 transition duration-500 transform hover:scale-110 shine-effect">
+                    <span class="text-2xl">📤</span>
+                    <span class="relative z-10 text-lg">Soumettre ma candidature</span>
+                </a>
+                
+                <div class="mt-12 flex items-center justify-center gap-8 text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <i data-feather="check-circle" class="text-green-500 w-5 h-5"></i>
+                        <span>Gratuit</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-feather="zap" class="text-yellow-500 w-5 h-5"></i>
+                        <span>Rapide</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-feather="shield" class="text-blue-500 w-5 h-5"></i>
+                        <span>Sécurisé</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-white mb-2">ALIBORA TalentTrack</h3>
+                <p class="text-gray-400">Votre partenaire pour une carrière réussie</p>
+            </div>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="hover:text-white transition duration-300">
+                    <i data-feather="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-white transition duration-300">
+                    <i data-feather="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-white transition duration-300">
+                    <i data-feather="facebook" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">© 2024 ALIBORA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+        
+        // Intersection Observer pour les animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.card-hover').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
